@@ -3,19 +3,10 @@ $(document).ready(() => {
         $('ul',this).stop().slideDown(200);
         
     }, function() {
-        
-            $('ul',this).stop().slideUp(200);
-        
-          }
-        
-        );
-        
-        
-        
-
-
-
-})
+        $('ul',this).stop().slideUp(200);
+        }
+    );
+    })
 
 
 
