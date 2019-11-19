@@ -16,7 +16,7 @@ function moveISS () {
          let lat = data['iss_position']['latitude'];
          let lon = data['iss_position']['longitude'];
          let iss = L.marker([lat, lon]).addTo(map).bindPopup("<b>The International Space Station</b>").openPopup();
-         let isscirc = L.circle([51.508, -0.11], 500, {
+         let isscirc = L.circle([lat, lon], 500, {
            color: 'red',
            fillColor: '#f03',
            fillOpacity: 0.5
