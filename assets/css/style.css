@@ -11,9 +11,16 @@ html {
 }
 
 header {
-  display: flex;
   background: #23272a;
+  font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
   color: #fff;
+  overflow: hidden;
+}
+
+.header__container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .header__logo {
@@ -36,7 +43,6 @@ header {
 
 .logo__text {
   margin-top: 0.6em;
-  font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
   font-size: 1.4em;;
   font-weight: 700;
   text-transform: uppercase;
@@ -51,6 +57,39 @@ header {
 
 .navbar-burger span {
   background: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+
+  header {
+    height: 4.5em;
+  }
+
+  .header__logo {
+    margin-left: 2em;
+  }
+
+  nav ul {
+    display: flex;
+    font-size: 0.85em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  nav ul li {
+    margin: 1.7em 0;
+  }
+
+  nav ul li a {
+    padding: 1em 2.8em;
+    color: inherit;
+  }
+
+  nav ul li a:hover {
+    color: rgb(215, 215, 215);
+  }
+
 }
 
 /*
