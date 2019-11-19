@@ -10,7 +10,50 @@ html {
   padding: 0;
 }
 
-/* */
+header {
+  display: flex;
+  background: #23272a;
+  color: #fff;
+}
+
+.header__logo {
+  display: flex;
+  margin: 0 auto 0 0;
+  padding: 0 1.4em;
+  color: inherit;
+  transform: translateX(-1.8em);
+  transition: color 400ms;
+}
+
+.header__logo:hover {
+  color: rgb(215, 215, 215);
+}
+
+.logo__image {
+  height: 3.2em;
+  margin: 0.6em 0.5em 0 0;
+}
+
+.logo__text {
+  margin-top: 0.6em;
+  font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
+  font-size: 1.4em;;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.navbar-burger {
+  margin: 0 auto 0 0;
+  height: 4.5em;
+  width: 4em;
+}
+
+.navbar-burger span {
+  background: #fff;
+}
+
+/*
 
 #title  {
   text-align: center;
@@ -33,6 +76,8 @@ html {
 
 
 /*navbar styling */
+
+/*
 
 nav {
   background: #2ba0db;
@@ -84,3 +129,5 @@ nav ul li ul li a {
 nav ul li ul li a:hover {
   background: #126d9b;
 }
+
+*/
