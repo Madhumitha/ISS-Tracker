@@ -7,6 +7,20 @@ function moveISS () {
          let lat = data['iss_position']['latitude'];
          let lon = data['iss_position']['longitude'];
 
+         // Icon Image 
+
+         let LeafIcon = L.Icon.extend({
+            options: {
+               iconSize:     [30, 30],
+               shadowSize:   [50, 50],
+            }
+        });
+
+        let Icon = new LeafIcon({
+            iconUrl: 'http://open-notify.org/Open-Notify-API/map/ISSIcon.png',
+            shadowUrl: 'http://open-notify.org/Open-Notify-API/map/ISSIcon_shadow.png'
+        })
+
          // Create variable to hold map element, give initial settings to map
          let map = L.map('map',{ center: [lat, lon], zoom: 14});
 
@@ -15,13 +29,12 @@ function moveISS () {
 
          map.setView([0, 0], 0);
 
-         let iss = L.marker([lat, lon]).addTo(map).bindPopup("<b>The International Space Station</b>").openPopup();
+         let iss = L.marker([lat, lon],{icon: Icon}).addTo(map).bindPopup("<b>The International Space Station</b>").openPopup();
          let isscirc = L.circle([lat, lon], 500, {
            color: 'red',
            fillColor: '#f03',
            fillOpacity: 0.5
          }).addTo(map);
-        let myDataPoint = L.marker([lat, lon]).addTo(map);
         iss.setLatLng([lat, lon]);
         console.log(iss.setLatLng([lat, lon]));
         isscirc.setLatLng([lat, lon]);
@@ -29,8 +42,10 @@ function moveISS () {
         map.panTo([lat, lon], animate=true);
         console.log(map.panTo([lat, lon], animate=true))
     });
-    setTimeout(moveISS, 5000); 
+    setTimeout(moveISS, 5000);
 }
+
+// Number of People in Space 
 
 function numberPeopleSpace() {
 
@@ -50,6 +65,9 @@ function numberPeopleSpace() {
 });
 }
 
+// Function Calls 
+
 moveISS();
 numberPeopleSpace();
+
 
