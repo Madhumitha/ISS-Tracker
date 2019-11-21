@@ -11,9 +11,9 @@ html {
 }
 
 header {
-  background: #23272a;
+  background: #211f25;
   font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
-  color: #fff;
+  color: #9ba4c1;
   overflow: hidden;
 }
 
@@ -32,8 +32,9 @@ header {
   transition: color 400ms;
 }
 
-.header__logo:hover {
-  color: rgb(215, 215, 215);
+.header__logo:hover,
+.header__logo:active {
+  color: #fff;
 }
 
 .logo__image {
@@ -59,6 +60,41 @@ header {
   background: #fff;
 }
 
+.mobile-navigation {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(32, 30, 36, 0.9);
+  position: absolute;
+  z-index: 1;
+}
+
+nav ul {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+}
+
+nav ul li {
+  padding: 0.2em;
+}
+
+nav ul li:first-of-type {
+  padding-top: 6em;
+}
+
+nav ul li a {
+  color: #ffe1a9;
+  transition: color 400ms, letter-spacing 600ms ease-out;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+  color: #fff;
+  letter-spacing: 0.35em;
+}
+
 @media screen and (min-width: 1024px) {
 
   header {
@@ -69,25 +105,80 @@ header {
     margin-left: 2em;
   }
 
+  .mobile-navigation {
+    display: none;
+  }
+
   nav ul {
     display: flex;
     font-size: 0.85em;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
   }
 
   nav ul li {
     margin: 1.7em 0;
+    padding: 0;
+  }
+
+  nav ul li:first-of-type {
+    padding-top: 0;
   }
 
   nav ul li a {
-    padding: 1em 2.8em;
     color: inherit;
+    padding: 1.8em 2.8em;
   }
 
-  nav ul li a:hover {
-    color: rgb(215, 215, 215);
+  nav ul li a:hover,
+  nav ul li a:active {
+    color: #ffe1a9;
+    letter-spacing: inherit;
+  }
+
+}
+
+body {
+  height: 100vh;
+  background: #2d2b33;
+  color: #fff;
+}
+
+.h1-section {
+  font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
+  font-size: 2.2em;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.h2-section {
+  font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
+  font-size: 1.6em;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-normal {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5em 1em;
+  margin: 1em 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  
+  .main-content {
+    display: grid;
+    grid-template-columns: 72% 28%;
+  }
+
+  .information {
+    grid-column: 2;
+  }
+  
+  .about {
+    grid-column: 1;
+    grid-row: 1;
   }
 
 }
