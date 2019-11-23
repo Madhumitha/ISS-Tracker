@@ -12,6 +12,18 @@
   <link rel="stylesheet" type="text/css" href="assets\css\style.css">
   <script src="funFacts.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+   <!-- Leaflet CSS -->
+
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    
+   <link ref='stylesheet' href='/assets/css/style.css'/>
+   
+
+   <!-- Leaflet javascript library-->
+
+   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -55,12 +67,17 @@
     </div>
   </header>
   
-  <div id="bigMap">
-    <h1>big map</h1>
-  </div>
-  <div id="data">
-    <h4>data</h4>
-  </div>
+      <div id="map" style="height: 90vh; width:100vw">
+        
+        </div>
+
+        <div id="isspass">
+
+        </div>
+
+        
+            <script src="script/dynamicMap.js"></script>
+      </div>
 
   <div class="container">
 
@@ -68,6 +85,16 @@
 
       <section class="information section-normal">
         <h2 class="h2-section">Information</h1>
+          <div class="">
+              <div id="spacepeeps">
+
+        
+                </div>
+        
+                <div id="astronames">
+                    
+                    </div>
+          </div>
       </section>
 
       <section class="about section-normal">
@@ -77,6 +104,187 @@
         
       <section class="photo-gallery section-normal">
         <h1 class="h1-section">Photo Gallery</h1>
+        <div class="">
+            <button class="prev">Previous</button>
+            <div id="images">
+              <p>Click a button to load image gallery</p>
+            </div>
+            <button class="next">Next</button>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript">
+              $(function() {
+                // This is our API key
+                var APIKey = "vvT6UiB9OnN6pgMgOWVY79s9DbQglY5uNeqqIwn5";
+                // Here we are building the URL we need to query the database
+                var queryURL = "https://images-api.nasa.gov/search?q=Apollo";
+                console.log(queryURL);
+                // Here we run our AJAX call to the NASA Gallery API
+                $.ajax({
+                  url: queryURL,
+                  method: "GET"
+                })
+                  // We store all of the retrieved data inside of an object called "response"
+                  .then(function(response) {
+                    // Log the queryURL
+                    console.log(queryURL);
+                    console.log(response);
+                    let firstImg = response.collection.items[4].links[0].href;
+                    let secondImg = response.collection.items[18].links[0].href;
+                    let thirdImg = response.collection.items[21].links[0].href;
+                    let fourthImg = response.collection.items[22].links[0].href;
+                    let fifthImg = response.collection.items[25].links[0].href;
+                    let sixthImg = response.collection.items[26].links[0].href;
+                    let seventhImg = response.collection.items[27].links[0].href;
+                    let eigthImg = response.collection.items[28].links[0].href;
+                    let ninthImg = response.collection.items[29].links[0].href;
+                    let tenthImg = response.collection.items[30].links[0].href;
+                    let eleventhImg = response.collection.items[32].links[0].href;
+                    let twevelthImg = response.collection.items[33].links[0].href;
+                    let thirteenthImg = response.collection.items[34].links[0].href;
+                    let fourteenthImg = response.collection.items[35].links[0].href;
+                    let fifteenthImg = response.collection.items[36].links[0].href;
+                    let sixteenthImg = response.collection.items[37].links[0].href;
+                    let seventeenthImg = response.collection.items[38].links[0].href;
+                    let eighteenthImg = response.collection.items[39].links[0].href;
+                    let nineteenthImg = response.collection.items[40].links[0].href;
+                    let twentyImg = response.collection.items[41].links[0].href;
+                    let twentyoneImg = response.collection.items[42].links[0].href;
+                    let twentytwoImg = response.collection.items[43].links[0].href;
+                    let twentythreeImg = response.collection.items[44].links[0].href;
+                    let twentyfourthImg = response.collection.items[45].links[0].href;
+                    let twentyfiveImg = response.collection.items[46].links[0].href;
+                    let twentysixImg = response.collection.items[47].links[0].href;
+                    let twentysevenImg = response.collection.items[48].links[0].href;
+                    let twentyeightImg = response.collection.items[49].links[0].href;
+                    let twentynineImg = response.collection.items[51].links[0].href;
+                    let thirtyImg = response.collection.items[55].links[0].href;
+                    let thirtyoneImg = response.collection.items[56].links[0].href;
+                    let thirtytwoImg = response.collection.items[57].links[0].href;
+                    let thirtythreeImg = response.collection.items[58].links[0].href;
+                    let thirtyfourImg = response.collection.items[59].links[0].href;
+                    let thirtyfiveImg = response.collection.items[61].links[0].href;
+                    let thirtysixImg = response.collection.items[62].links[0].href;
+                    let thirtysevenImg = response.collection.items[64].links[0].href;
+                    let thirtyeightImg = response.collection.items[65].links[0].href;
+                    let thirtynineImg = response.collection.items[66].links[0].href;
+                    let fourtyImg = response.collection.items[67].links[0].href;
+                    let fourtyoneImg = response.collection.items[68].links[0].href;
+                    let fourtytwoImg = response.collection.items[70].links[0].href;
+                    let fourtythreeImg = response.collection.items[71].links[0].href;
+                    let fourtyfourImg = response.collection.items[72].links[0].href;
+                    let fourtyfiveImg = response.collection.items[74].links[0].href;
+                    let fourtysixImg = response.collection.items[75].links[0].href;
+                    let fourtysevenImg = response.collection.items[76].links[0].href;
+                    let fourtyeightImg = response.collection.items[77].links[0].href;
+                    let fourtynineImg = response.collection.items[78].links[0].href;
+                    let fiftyImg = response.collection.items[79].links[0].href;
+                    let fiftyoneImg = response.collection.items[80].links[0].href;
+                    let fiftytwoImg = response.collection.items[82].links[0].href;
+                    let fiftythreeImg = response.collection.items[95].links[0].href;
+                    let fiftyfourImg = response.collection.items[96].links[0].href;
+                    let fiftyfiveImg = response.collection.items[98].links[0].href;
+                    let fiftysixImg = response.collection.items[99].links[0].href;
+                    var images = [
+                        firstImg,
+                        secondImg,
+                        thirdImg,
+                        fourthImg,
+                        fifthImg,
+                        sixthImg,
+                        seventhImg,
+                        eigthImg,
+                        ninthImg,
+                        tenthImg,
+                        eleventhImg,
+                        twevelthImg,
+                        thirteenthImg,
+                        fourteenthImg,
+                        fifteenthImg,
+                        sixteenthImg,
+                        seventeenthImg,
+                        eighteenthImg,
+                        nineteenthImg,
+                        twentyImg,
+                        twentyoneImg,
+                        twentytwoImg,
+                        twentythreeImg,
+                        twentyfourthImg,
+                        twentyfiveImg,
+                        twentysixImg,
+                        twentysevenImg,
+                        twentyeightImg,
+                        twentynineImg,
+                        thirtyImg,
+                        thirtyoneImg,
+                        thirtytwoImg,
+                        thirtythreeImg,
+                        thirtyfourImg,
+                        thirtyfiveImg,
+                        thirtysixImg,
+                        thirtysevenImg,
+                        thirtyeightImg,
+                        thirtynineImg,
+                        fourtyImg,
+                        fourtyoneImg,
+                        fourtytwoImg,
+                        fourtythreeImg,
+                        fourtyfourImg,
+                        fourtyfiveImg,
+                        fourtysixImg,
+                        fourtysevenImg,
+                        fourtyeightImg,
+                        fourtynineImg,
+                        fiftyImg,
+                        fiftyoneImg,
+                        fiftytwoImg,
+                        fiftythreeImg,
+                        fiftyfourImg,
+                        fiftyfiveImg,
+                        fiftysixImg
+                      ],
+                      curIndex = 0,
+                      gotoImage = function(index) {
+                        $("#images").each(function(i) {
+                          var image = curIndex + i;
+                          if (image >= images.length) {
+                            image = image - images.length;
+                          }
+                          $(this).html($("<img>", { src: images[image] }));
+                        });
+                      };
+                    $(".prev").click(function(e) {
+                      curIndex--;
+                      if (curIndex === -1) {
+                        curIndex = images.length - 1;
+                      }
+                      gotoImage(curIndex);
+                    });
+                    $(".next").click(function(e) {
+                      curIndex++;
+                      if (curIndex === images.length) {
+                        curIndex = 0;
+                      }
+                      gotoImage(curIndex);
+                    });
+                  });
+              });
+            </script>
+        </div>
+      </section>
+
+      <section class="section-normal">
+          <h2 class="h2-section">Fun Fact</h2>
+          <!-- Trigger/Open The Modal -->
+          <button class="factButton">Open Modal</button>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p class="modal-append"></p>
+            </div>
+          </div>
+          <script src="script/script.js"></script>
       </section>
 
     </div>
