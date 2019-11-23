@@ -27,7 +27,8 @@ function moveISS () {
          //Add OpenStreetMap tile layer to map element
          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 
-         map.setView([0, 0], 0);
+         map.setView([0, 0], 2.5);
+         map.setMinZoom(2.5);
 
          let iss = L.marker([lat, lon],{icon: Icon}).addTo(map).bindPopup("<b>The International Space Station</b>").openPopup();
          let isscirc = L.circle([lat, lon], 500, {
