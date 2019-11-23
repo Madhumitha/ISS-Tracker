@@ -13,9 +13,8 @@ $(function() {
   })
     // We store all of the retrieved data inside of an object called "response"
     .then(function(response) {
-      // Log the queryURL
+      // Log the queryURL and response
       console.log(queryURL);
-
       console.log(response);
 
       let firstImg = response.collection.items[4].links[0].href;
@@ -143,20 +142,25 @@ $(function() {
           });
         };
 
-      $(".prev").click(function(e) {
+      $(".prev").click(function() {
         curIndex--;
         if (curIndex === -1) {
           curIndex = images.length - 1;
         }
+        $("#prev").show();
         gotoImage(curIndex);
+        console.log(curIndex);
       });
 
-      $(".next").click(function(e) {
+      $(".next").click(function() {
         curIndex++;
         if (curIndex === images.length) {
           curIndex = 0;
         }
+        $("#next").show();
         gotoImage(curIndex);
+        console.log(curIndex);
       });
     });
 });
+

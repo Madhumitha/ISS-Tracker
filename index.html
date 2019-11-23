@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>International Space Station Locator</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Tomorrow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <link rel="stylesheet" type="text/css" href="assets\css\style.css">
-  <script src="funFacts.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>International Space Station Locator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Tomorrow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets\css\style.css" />
+    <script src="funFacts.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Space</h1>
+    </header>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Fun Page</a>
+            <ul>
+              <li><a href="#">Fun Facts</a></li>
+              <li><a href="#">Soundbites</a></li>
+              <li><a href="#">Trivia</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Gallery</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <header>
-    <h1 id="title">Space</h1>
-  </header>
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Fun Page</a>
-          <ul>
-            <li><a href="#">Fun Facts</a></li>
-            <li><a href="#">Soundbites</a></li>
-            <li><a href="#">Trivia</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Gallery</a></li>
-      </ul>
+    <div id="bigMap">
+      <h1>big map</h1>
     </div>
-  </nav>
-  
-  <div id="bigMap">
-    <h1>big map</h1>
-  </div>
-  <div id="data">
-    <h4>data</h4>
-  </div>
-  <div id="images">
-   <button class="prev">Previous</button>
+    <div id="data">
+      <h4>data</h4>
+    </div>
+    <div id="images">
+      <button type="button" class="prev" id="prev">Previous</button>
       <p>Click a button to load image gallery</p>
-    <button class="next">Next</button>
+      <button type="button" class="next" id="next">Next</button>
     </div>
-<script type="text/javascript" src="script/script.js"></script>
-</body>
+    <script type="text/javascript" src="script/script.js"></script>
+  </body>
 </html>
