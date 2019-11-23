@@ -49,4 +49,27 @@ $(document).ready(() => {
     })
     })
     });
+    $(".space").on("click", () => {
+      var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=international space station&api-key=TI5JqG3XC6bQ7AJaB1BNxbRrrKJiIYFu";
+      $.ajax({
+      url: queryURL,
+      method: "GET"
+      }).then(function(res) {
+          // console.log(queryURL);
+          var results = res.response
+          console.log(results);
+  let artArray = results.docs;
+  //console.log(artArray);
+  var randomNumber = Math.floor(Math.random()*artArray.length);
+  let leadPar = artArray[randomNumber].lead_paragraph;
+  console.log(leadPar);
+  $(".artinfo").html(leadPar);
+  $(".readmore").on("click", () => {
+      var artLink = artArray[randomNumber].web_url;
+      console.log(artLink);
+      window.open(artLink);
+  })
+  })
+  });
+
 });
