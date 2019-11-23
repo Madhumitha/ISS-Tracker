@@ -11,7 +11,7 @@ html {
 }
 
 header {
-  background: #211f25;
+  background: #14161e;
   font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
   color: #9ba4c1;
   overflow: hidden;
@@ -63,7 +63,7 @@ header {
 .mobile-navigation {
   height: 100vh;
   width: 100vw;
-  background: rgb(32, 30, 36, 0.9);
+  background: #14161ee6;
   position: absolute;
   z-index: 1;
 }
@@ -138,7 +138,7 @@ nav ul li a:active {
 }
 
 html {
-  background: #2d2b33;
+  background: #1e222c;
 }
 
 body {
@@ -155,6 +155,8 @@ h1, h2 {
 .h1-section,
 .h2-section {
   margin-bottom: 0.6em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid rgba(155, 164, 193, 0.3);
   font-family: "Tomorrow", "Rubik", Arial, Helvetica, sans-serif;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -170,9 +172,64 @@ h1, h2 {
 }
 
 .section-normal {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.5em 1em;
   margin: 1em 1em;
+}
+
+.information {
+  text-align: center;
+}
+
+.information__content {
+  font-size: 0.85em;
+}
+
+.information__label {
+  padding: 1.4em 0 1em;
+  color: #ffe1a9;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+
+.information__data {
+  padding-bottom: 0.4em;
+  color: #9ba4c1;
+  font-size: 1.8em;
+  font-weight: 500;
+  list-style: none;
+}
+
+.information__data li {
+  padding: 0.2em 0;
+}
+
+.photo-gallery__content {
+  display: flex;
+  min-height: 20em;
+}
+
+.photo-gallery__content p {
+  padding: 0 1em;
+  color: #9ba4c1;
+  text-align: center;
+  margin-top: 8em;
+}
+
+.photo-gallery__content button {
+  margin: 0 0.6em;
+  min-width: 2.4em;
+  border: none;
+  background: #14161e;
+  color: #9ba4c1;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 700;
+  transition: background 400ms;
+}
+
+.photo-gallery__content button:hover,
+.photo-gallery__content button:active {
+  background: #191b25;
 }
 
 @media screen and (min-width: 1024px) {
@@ -186,11 +243,16 @@ h1, h2 {
     grid-column: 2;
   }
   
-  .about {
+  .column-1-objects {
     grid-column: 1;
     grid-row: 1;
   }
 
+}
+
+#map {
+  height: 75vh;
+  width: 100vw;
 }
 
 /*
