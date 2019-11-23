@@ -24,8 +24,15 @@ function moveISS () {
          // Create variable to hold map element, give initial settings to map
          let map = L.map('map',{ center: [lat, lon], zoom: 14});
 
+         let mapStyle = [
+            'hue: 230deg',
+            'grayscale: 60%',
+            'invert: 100%',
+            'brightness: 90%',
+         ];
+
          //Add OpenStreetMap tile layer to map element
-         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+         L.tileLayer.colorFilter('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap', filter: mapStyle }).addTo(map);
 
          map.setView([0, 0], 2.5);
          map.setMinZoom(2.5);

@@ -14,10 +14,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="assets\css\style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
    <!-- Leaflet CSS and JS Library -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+   <script src="script/leaflet-tilelayer-colorfilter.min.js"></script>
 </head>
 <body>
 
@@ -68,10 +69,8 @@
       <section class="information section-normal">
         <h2 class="h2-section">Information</h1>
         <div class="information__content">
-          <div class="information__label">Latitude</div>
-          <div class="information__data" id="latitude"></div>
-          <div class="information__label">Longitude</div>
-          <div class="information__data" id="longitude"></div>
+          <div class="information__label">Latitude, Longitude</div>
+          <div class="information__data"><span id="latitude"></span>, <span id="longitude"></span></div>
           <div class="information__label">Astronaut Count</div>
           <div class="information__data" id="spacepeeps"></div>
           <div class="information__label">Current Crew</div>
