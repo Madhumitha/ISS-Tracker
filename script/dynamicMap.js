@@ -42,6 +42,9 @@ function moveISS () {
         console.log(isscirc.setLatLng([lat, lon]));
         map.panTo([lat, lon], animate=true);
         console.log(map.panTo([lat, lon], animate=true))
+
+        $('#latitude').html(lat);
+        $('#longitude').html(lon);
     });
     setTimeout(moveISS, 5000);
 }
