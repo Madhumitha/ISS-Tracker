@@ -208,6 +208,10 @@ h1, h2 {
   min-height: 20em;
 }
 
+.photo-gallery__main {
+  justify-content: center;
+}
+
 .photo-gallery__content p {
   padding: 0 1em;
   color: #9ba4c1;
