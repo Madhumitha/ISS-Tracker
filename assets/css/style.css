@@ -176,6 +176,21 @@ h1, h2 {
   margin: 1em 1em;
 }
 
+.section-normal p {
+  line-height: 2em;
+  padding-bottom: 0.2em;
+}
+
+.section-normal a {
+  color: #9ba4c1;
+  font-weight: 500;
+  transition: color 400ms;
+}
+
+.section-normal a:hover {
+  color: #ffe1a9;
+}
+
 .information {
   text-align: center;
 }
@@ -234,6 +249,11 @@ h1, h2 {
 .photo-gallery__content button:hover,
 .photo-gallery__content button:active {
   background: #191b25;
+}
+
+.gallery-link {
+  font-style: italic;
+  font-weight: 300;
 }
 
 @media screen and (min-width: 1024px) {
