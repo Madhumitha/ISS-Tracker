@@ -22,8 +22,8 @@
 <body>
 
   <header>
-    <!--<nav class="mobile-navigation">
-      <a class="navbar-burger is-active">
+    <nav class="mobile-navigation" id="mobileNav">
+      <a class="navbar-burger is-active" id="mobileNavClose">
         <span></span>
         <span></span>
         <span></span>
@@ -33,9 +33,9 @@
         <li><a>Fun Page</a></li>
         <li><a>Photo Gallery</a></li>
       </ul>
-    </nav>-->
+    </nav>
     <div class="header__container">
-      <a class="navbar-burger">
+      <a class="navbar-burger" id="mobileNavOpen">
         <span></span>
         <span></span>
         <span></span>
@@ -55,7 +55,7 @@
     </div>
   </header>
   
-  <section class="big-map">
+  <section class="big-map" id="bigMap">
     <div id="map"></div>
     <div id="isspass"></div>
     <script src="script/dynamicMap.js"></script>
@@ -111,6 +111,8 @@
     </div>
 
   </div>
+
+  <script src="script/script.js"></script>
 
 </body>
 </html>

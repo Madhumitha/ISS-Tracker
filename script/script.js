@@ -1,4 +1,4 @@
-$(document).ready(() => {
+/*$(document).ready(() => {
 $('.factButton').on('click', () => {
         console.log("hello")
        var factsList = ["Sixteen nations were involved in the construction of the ISS: The United States, Russia, Canada, Japan, Belgium, Brazil, Denmark, France, Germany, Italy, the Netherlands, Norway, Spain, Sweden, Switzerland, and the United Kingdom.",
@@ -21,4 +21,20 @@ $('.factButton').on('click', () => {
       }
     }
 })
-})
+})*/
+
+$(document).ready(() => {
+  $("#bigMap").show();
+  $("#mobileNav").hide();
+});
+
+$("#mobileNavOpen").click(function() {
+  $("#bigMap").hide(400, "swing");
+  $("#mobileNav").show(400, "swing");
+});
+
+$("#mobileNavClose").click(function() {
+  $("#bigMap").show(400, "swing");
+  $("#mobileNav").hide(400, "swing");
+});
+
