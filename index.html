@@ -1,65 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Metatags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Dynamic Map </title>
-
-    <!-- Bootstrap Link for css and jquery -->
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <!-- Leaflet CSS -->
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    
-    <link ref='stylesheet' href='/assets/css/style.css'/>
-    
-
-    <!-- Leaflet javascript library-->
-
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>International Space Station Locator</title>
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Font (Tomorrow, Rubik) -->
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i|Tomorrow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+  <!-- Bulma CSS Framework-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Leaflet CSS and JS Library -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="script/leaflet-tilelayer-colorfilter.min.js"></script>
 </head>
 
-
 <body>
-        
-         <div id="map" style="height: 400px; width:600px">
-        
-        </div>
 
-        <div id="isspass">
-
-        </div>
-
-        <div id="spacepeeps">
-
-        
-        </div>
-
-        <div id="astronames">
-            
-            </div>
-
-        
-    
-        
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="scripts/dynamicMap.js"></script>
-        
-
+  <header>
+    <nav class="mobile-navigation" id="mobileNav">
+      <a class="navbar-burger is-active" id="mobileNavClose">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fun.html">Fun Page</a></li>
+        <li><a href="gallery.html">Photo Gallery</a></li>
+      </ul>
+    </nav>
+    <div class="header__container">
+      <a class="navbar-burger" id="mobileNavOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <a class="header__logo" href="index.html">
+        <img class="logo__image" src="assets/images/logo.png">
+        <div class="logo__text">ISS <br>Locator</div>
+      </a>
+      <div class="is-hidden-touch">
+        <nav>
+          <ul>
+            <li><a href="fun.html">Fun Page</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+  </header>
+  
+  <section class="big-map" id="bigMap">
+    <div id="map"></div>
+    <div id="isspass"></div>
+    <script src="script/dynamicMap.js"></script>
+  </section>
+
+  <div class="container">
+
+    <div class="main-content">
+
+      <section class="information section-normal">
+        <h2 class="h2-section">Information</h1>
+        <div class="information__content">
+          <div class="information__label">Latitude, Longitude</div>
+          <div class="information__data"><span id="latitude"></span>, <span id="longitude"></span></div>
+          <div class="information__label">Astronaut Count</div>
+          <div class="information__data" id="spacepeeps"></div>
+          <div class="information__label">Current Crew</div>
+          <div class="information__data" id="astronames"></div>
+        </div>
+      </section>
+
+      <div class="column-1-objects">
+
+        <section class="about section-normal">
+          <h1 class="h1-section">About</h1>
+          <p>Tired of your flat earther friends complaining about the Earth not being round? Have you wanted to see information about the International Space Station in one place? Welcome to the International Space Station Locator where you can get all of that.</p>
+          <p>This website will always be dynamically updated with the current position of the International Space Station along with the current crew aboard.</p>
+          <p>The ISS is orbiting the Earth is one of many reasons why the Earth couldn't be flat, but check out our <a href="">Fun Page</a> on everything NASA and flat-earth related.</p>
+        </section>
+
+        <section class="fun-fact section-normal">
+          <h2 class="h1-section">Fun Facts</h2>
+          <button class="factButton button-main">ISS Fun Fact List</button>
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p class="modal-append"></p>
+            </div>
+          </div>
+          <script src="script/articlesFacts.js"></script>
+        </section>
+          
+        <section class="photo-gallery section-normal">
+          <h1 class="h1-section">Photo Gallery</h1>
+          <div class="photo-gallery__content">
+            <button class="prev">&lt</button>
+            <div id="images">
+              <p>Click a button to load image gallery</p>
+            </div>
+            <button class="next">&gt</button>
+            
+            <script type="text/javascript" src ="script/gallery.js"></script>
+          </div>
+          <p><a class="gallery-link" href="gallery.html">See more photos...</a></p>
+        </section>
+
+      </div>
     
+    </div>
+
+  </div>
+
+  <script src="script/script.js"></script>
+
 </body>
 </html>
