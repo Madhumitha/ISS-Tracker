@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Photo Gallery - International Space Station Locator</title>
+  <title>Fun Page - International Space Station Locator</title>
   <!-- JQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -20,6 +20,7 @@
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="script/leaflet-tilelayer-colorfilter.min.js"></script>
 </head>
+
 <body>
 
   <header>
@@ -57,17 +58,28 @@
     </header>
 
     <div class="container">
-      <section class="photo-gallery section-normal">
-        <h1 class="h1-section">Photo Gallery</h1>
-        <div class="photo-gallery__content photo-gallery__main">
-          <button class="prev">&lt</button>
-          <div id="images">
-            <p>Click a button to load image gallery</p>
+
+      <section class="section-normal">
+        <h2 class="h1-section">Fun Facts</h2>
+        <button class="factButton button-main">ISS Fun Facts List</button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal-append"></p>
           </div>
-          <button class="next">&gt</button>
-          <script type="text/javascript" src ="script/gallery.js"></script>
         </div>
       </section>
+
+      <section class="section-normal">
+        <h2 class="h1-section">Articles</h2>
+        <p class="artinfo"></p>
+        <button class="test button-main">Generate Flat Earth Article</button>
+        <button class="test button-main">Generate NASA Article</button>
+        <button class="readmore button-main">Read More...</button>
+      </section>
+
+      <script src="script/articlesFacts.js"></script>
+
     </div>
 
     <script src="script/script.js"></script>
