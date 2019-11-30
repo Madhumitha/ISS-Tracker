@@ -11,7 +11,7 @@ function moveISS () {
 
          let LeafIcon = L.Icon.extend({
             options: {
-               iconSize:     [30, 30],
+               iconSize:     [70, 70],
                shadowSize:   [50, 50],
             }
         });
